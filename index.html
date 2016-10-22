@@ -108,6 +108,9 @@
 	<hr>
 	<script type="text/javascript" src="skrollr.js"></script>
 	<script type="text/javascript">
+		function isTouchDevice() {
+    return 'ontouchstart' in document.documentElement;
+}
     function checkClient()
     {
         // Get window size
@@ -126,7 +129,7 @@
             s.destroy();
         }
         // Check for touch
-        if(Modernizr.touch) 
+        if(isTouchDevice()) 
         {
             // Init Skrollr
             var s = skrollr.init();
