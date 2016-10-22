@@ -108,7 +108,32 @@
 	<hr>
 	<script type="text/javascript" src="skrollr.js"></script>
 	<script type="text/javascript">
-    skrollr.init();
+    function checkWinSize()
+    {
+        // Get window size
+        winW = window.innerWidth;
+        winH = window.innerHeight;
+        // Init Skrollr for 768 and up
+        if( winW >= 768)
+        {
+            // Init Skrollr
+            skrollr.init();
+        } 
+        else 
+        {
+        // Init Skrollr
+            var s = skrollr.init();
+            s.destroy();
+        }
+        // Check for touch
+        if(Modernizr.touch) 
+        {
+            // Init Skrollr
+            var s = skrollr.init();
+            s.destroy();
+        }
+    }
+    checkWinSize();
 	</script>
 </body>
  
