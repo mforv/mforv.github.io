@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&subset=cyrillic,cyrillic-ext,latin-ext');
+
+body { font-family: 'Roboto Light', sans-serif; color: #111; margin-top: -30px; }
+
+h1 { text-align: center; padding: 100px; margin-bottom: 0; }
+h2 { font-family: 'Roboto', sans-serif; margin-top: 0; margin-bottom: 20px; font-size: 26px; font-weight: 400; color: #003897; padding-top: 0 }
+h3 { font-family: 'Roboto', sans-serif; margin-top: 0; margin-bottom: 20px; font-size: 20px; font-weight: 400; color: #003897; padding-top: 0 }
+h4 { font-family: 'Roboto Light', sans-serif; margin-top: 0; margin-bottom: 2px; font-size: 18px; font-weight: bold; color: #003897; padding-top: 0 }
+p  { font-size: 16px; line-height: 1.4em; margin-top: 0}
+hr { margin-top: 30px; margin-bottom: 30px;}
+
+header { background-color: #0a0a0a; background-image: url(img/lp_bg.png); background-position:center; background-repeat: no-repeat;}
+
+a:link, a:visited  {	color: #003897; }
+a:hover { text-decoration: none; }
+
+a.float img {
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+	filter: gray; /* IE6-9 */
+	-webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */}
+a.float:hover img {
+	filter: none; -webkit-filter: grayscale(0%);
+	}
+
+#upper { position:fixed; top:50%; right: 10%; }
