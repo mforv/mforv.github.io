@@ -34,7 +34,7 @@ a:hover { text-decoration: none; }
 }
 @media only screen and (max-width: 768px)
 {
-    .band { background: #90a2ba url("img/lp_bg.png") no-repeat -100px -50px;}
+    .band { background: #90a2ba url("img/lp_bg.png") no-repeat -200px -100px;}
 }
 .main {
     background: #FFF no-repeat;
