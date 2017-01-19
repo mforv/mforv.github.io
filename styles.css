@@ -28,13 +28,23 @@ a:hover { text-decoration: none; }
 	}
 
 .band {
-
-    background: #90a2ba url("img/lp_bg.jpg") no-repeat;
+    height: 610px;
+    background-image: url("img/lp_logo.png"), url("img/lp_bg.jpg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: center 10em, left top;
+    background-color: #90a2ba;
 
 }
 @media only screen and (max-width: 768px)
 {
-    .band { background: #90a2ba url("img/lp_bg.jpg") no-repeat -200px -100px;}
+    .band { 
+        height: 330px;
+        background-image: url("img/lp_logo.png"), url("img/lp_bg.jpg");
+        background-repeat: no-repeat, no-repeat;
+        background-position: center 5em, -200px -100px;
+        background-color: #90a2ba;
+        background-size: 300px auto, auto;
+    }
 }
 .main {
     background: #FFF no-repeat;
