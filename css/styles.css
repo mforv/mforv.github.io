@@ -29,7 +29,7 @@ a:hover { text-decoration: none; }
 
 .band {
     height: 610px;
-    background-image: url("img/lp_logo.png"), url("img/lp_bg.jpg");
+    background-image: url("../img/lp_logo.png"), url("../img/lp_bg.jpg");
     background-repeat: no-repeat, no-repeat;
     background-position: center 10em, left top;
     background-color: #90a2ba;
@@ -39,7 +39,7 @@ a:hover { text-decoration: none; }
 {
     .band { 
         height: 330px;
-        background-image: url("img/lp_logo.png"), url("img/lp_bg.jpg");
+        background-image: url("../img/lp_logo.png"), url("../img/lp_bg.jpg");
         background-repeat: no-repeat, no-repeat;
         background-position: center 5em, -200px -100px;
         background-color: #90a2ba;

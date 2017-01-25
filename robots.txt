@@ -1,0 +1,6 @@
+﻿User-Agent: *
+Disallow: /css/
+Disallow: /img/
+Disallow: /willows/css/
+Disallow: /willows/img/
+Disallow: /anatomists/
