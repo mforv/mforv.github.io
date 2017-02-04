@@ -1,5 +1,8 @@
 User-agent: Twitterbot
-Disallow:
+Disallow: *
+
+Allow: /img/
+Allow: /willows/img/
 
 User-Agent: *
 Disallow: /css/
