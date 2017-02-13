@@ -18,17 +18,17 @@ a:link, a:visited  {	color: #42588a; text-decoration: none;}
 a:hover { text-decoration: underline; }
 
 .band {
-    background: #42588a url("../img/willows_back.jpg") no-repeat;
+    background: #FFF/*#42588a*/ url("../img/willows_back.jpg") no-repeat;
 }
 @media only screen and (max-width: 768px)
 {
-    .band { background: #42588a url("../img/willows_back.jpg") no-repeat /*-375px;*/}
+    .band { background: #FFF/*#42588a*/ url("../img/willows_back.jpg") no-repeat /*-375px;*/}
 }
 .main {
     background: #FFF no-repeat;
 }
 .parallax {
-    /*position: relative;*/
+    position: relative;
     width: 100%;
     min-height: 100vh;
     background-attachment: fixed;
