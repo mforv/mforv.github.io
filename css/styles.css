@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-body { font-family: 'Roboto Light', sans-serif; color: #111; margin-top: -30px; padding-right: 0px; margin-left: 0px; margin-right: 0px;}
+body { font-family: 'Roboto Light', sans-serif; color: #111; margin-top: -30px; padding-right: 0px; margin-left: 0px; margin-right: 0px; }
 
 h1 { text-align: center; padding-top: 100px; padding-bottom: 70px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;}
 h2 { font-family: 'Roboto', sans-serif; margin-top: 0; margin-bottom: 20px; font-size: 26px; font-weight: 400; color: #003897; padding-top: 0 }
@@ -37,9 +37,16 @@ header { height: 610px; }
     background-position: center 10em, left top;
     background-color: #90a2ba;
 }
-
+    body:before {
+        position: fixed;
+        z-index: 2000;
+        top: 0;
+        left: 0;
+        display: none;
+    }
 @media only screen and (max-width: 768px)
 {
+
     header { height: 330px; }
 
     .band { 
