@@ -29,14 +29,6 @@ a:hover { text-decoration: none; }
 	}
 
 /*Parallax tricks*/
-body:before {
-    position: fixed;
-    z-index: 2000;
-    top: 0;
-    left: 0;
-    display: none;
-}
-
 header { height: 610px; }
 
 .band {
