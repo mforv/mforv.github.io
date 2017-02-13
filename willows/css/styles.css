@@ -28,7 +28,7 @@ a:hover { text-decoration: underline; }
     background: #FFF no-repeat;
 }
 .parallax {
-    position: relative;
+    /*position: relative;*/
     width: 100%;
     min-height: 100vh;
     background-attachment: fixed;
