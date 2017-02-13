@@ -7,7 +7,7 @@ h2 { font-family: 'Roboto', sans-serif; margin-top: 0; margin-bottom: 20px; font
 h3 { font-family: 'Roboto', sans-serif; margin-top: 0; margin-bottom: 20px; font-size: 20px; font-weight: 400; color: #003897; padding-top: 0 }
 h4 { font-family: 'Roboto Light', sans-serif; margin-top: 0; margin-bottom: 2px; font-size: 18px; font-weight: bold; color: #003897; padding-top: 0 }
 p  { font-size: 16px; line-height: 1.4em; margin-top: 0}
-hr { margin-top: 30px; margin-bottom: 30px; background-color: #FFF;}
+hr { margin-top: 30px; margin-bottom: 30px; }
 
 a:link, a:visited  {	color: #003897; }
 a:hover { text-decoration: none; }
@@ -29,6 +29,14 @@ a:hover { text-decoration: none; }
 	}
 
 /*Parallax tricks*/
+body:before {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
 header { height: 610px; }
 
 .band {
@@ -37,13 +45,7 @@ header { height: 610px; }
     background-position: center 10em, left top;
     background-color: #90a2ba;
 }
-    body:before {
-        position: fixed;
-        z-index: 2000;
-        top: 0;
-        left: 0;
-        display: none;
-    }
+
 @media only screen and (max-width: 768px)
 {
 
@@ -61,6 +63,7 @@ header { height: 610px; }
 .main { background: #FFF no-repeat; }
 
 .upper-block { margin-top: 0; padding-top: 30px; background-color: #FFF; }
+.bottom-block {margin-bottom: 0; padding-bottom: 30px; background-color: #FFF; }
 
 .parallax {
     position: relative;
