@@ -19,10 +19,14 @@ a:hover { text-decoration: underline; }
 
 .band {
     background: #FFF/*#42588a*/ url("../img/willows_back.jpg") no-repeat;
+    background-size: cover;
 }
 @media only screen and (max-width: 768px)
 {
-    .band { background: #FFF/*#42588a*/ url("../img/willows_back.jpg") no-repeat 0px -375px;}
+    .band { 
+        background: #FFF/*#42588a*/ url("../img/willows_back.jpg") no-repeat;
+        background-size: cover;
+    }
 }
 .main {
     background: #FFF no-repeat;
@@ -32,5 +36,4 @@ a:hover { text-decoration: underline; }
     width: 100%;
     min-height: 100vh;
     background-attachment: fixed;
-    background-size: cover;
 }
