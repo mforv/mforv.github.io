@@ -17,13 +17,6 @@ hr { margin-top: 5px; margin-bottom: 5px;}
 a:link, a:visited  {	color: #42588a; text-decoration: none;}
 a:hover { text-decoration: underline; }
 
-.parallax {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-attachment: fixed;
-}
-
 .band {
     background: #FFF/*#42588a*/ url("../img/willows_back.jpg") no-repeat;
     background-size: cover;
@@ -38,3 +31,13 @@ a:hover { text-decoration: underline; }
     background: #FFF no-repeat;
 }
 
+.parallax {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+@media only screen and (max-width: 768px)
+{
+    .parallax { min-height: 125vh;}
+}
