@@ -23,7 +23,7 @@ a:hover { text-decoration: underline; }
 }
 @media only screen and (max-width: 768px)
 {
-    .band { background: #FFF/*#42588a*/ url("../img/willows_back.jpg") no-repeat; }
+    .band { background: #FFF/*#42588a*/ url("../img/willows_back.jpg") no-repeat; min-height: 125vh;}
 }
 .main {
     background: #FFF no-repeat;
