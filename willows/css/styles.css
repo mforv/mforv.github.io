@@ -22,11 +22,6 @@ a:hover { text-decoration: underline; }
     background-size: cover;
 }
 
-@media only screen and (max-width: 768px)
-{
-    .band { background: #FFF/*#42588a*/ url("../img/willows_back.jpg") no-repeat; min-height: 125vh;}
-}
-
 .main {
     background: #FFF no-repeat;
 }
@@ -37,7 +32,12 @@ a:hover { text-decoration: underline; }
     min-height: 100vh;
     background-attachment: fixed;
 }
+
 @media only screen and (max-width: 768px)
 {
-    .parallax { min-height: 125vh;}
+    .band { 
+        background: #FFF/*#42588a*/ url("../img/willows_back.jpg") no-repeat; 
+        background-attachment: fixed;
+        min-height: 150vh;
+    }
 }
