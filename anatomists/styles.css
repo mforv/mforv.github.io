@@ -38,7 +38,7 @@ a:hover { text-decoration: none; }
     z-index: 1;
     bottom: 110%;
     left: 50%;
-    margin-left: -60px;
+    margin-left: -50%;
 
     /* Fade in tooltip */
     opacity: 0;
