@@ -3,9 +3,9 @@
 body { font-family: 'Roboto Light', sans-serif; color: #111; margin-top: 10px; padding-right: 0px; margin-left: 0px; margin-right: 0px;}
 
 h1 { text-align: center; padding-top: 20px; padding-bottom: 20px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;}
-h2 { font-family: 'Roboto', sans-serif; margin-top: 0; margin-bottom: 20px; font-size: 24px; font-weight: 400; color: #930000; padding-top: 0 }
-h3 { font-family: 'Roboto', sans-serif; margin-top: 5px; margin-bottom: 15px; font-size: 18px; font-weight: 400; color: #930000; padding-top: 0 }
-h4 { font-family: 'Roboto Light', sans-serif; margin-top: 0; margin-bottom: 2px; font-size: 18px; font-weight: bold; color: #930000; padding-top: 0 }
+h2 { font-family: 'Roboto', sans-serif; margin-top: 0; margin-bottom: 20px; font-size: 22px; font-weight: 400; color: #111/*930000*/; padding-top: 0 }
+h3 { font-family: 'Roboto', sans-serif; margin-top: 5px; margin-bottom: 15px; font-size: 18px; font-weight: 400; color: #111/*930000*/; padding-top: 0 }
+h4 { font-family: 'Roboto Light', sans-serif; margin-top: 0; margin-bottom: 2px; font-size: 18px; font-weight: bold; color: #111/*930000*/; padding-top: 0 }
 p  { font-size: 16px; line-height: 1.0em; margin-top: 0}
 p.hp {font-size: 22px; line-height: 1.0em; margin-top: 0}
 p.eq {border-bottom: 1px solid black;}
@@ -25,11 +25,13 @@ a:hover { text-decoration: none; }
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: #930000;
-    color: #fff;
+    background-color: #fff/*#930000*/;
+    color: #111/*fff*/;
     text-align: center;
     padding: 5px 5px;
     border-radius: 3px;
+    border-style: solid;
+    border-width: 2px;
 
     /* Position the tooltip text */
     position: absolute;
@@ -40,7 +42,7 @@ a:hover { text-decoration: none; }
 
     /* Fade in tooltip */
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 0.5s;
 }
 
 /* Tooltip arrow */
@@ -50,9 +52,9 @@ a:hover { text-decoration: none; }
     top: 100%;
     left: 50%;
     margin-left: -5px;
-    border-width: 7px;
+    border-width: 8px;
     border-style: solid;
-    border-color: #930000 transparent transparent transparent;
+    border-color: #111/*930000*/ transparent transparent transparent;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
