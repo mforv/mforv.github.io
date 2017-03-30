@@ -8,40 +8,47 @@
     <link rel="icon" type="image/png" href="favicon.png"/>
 </head>
 <body>
-<div id="top"></div>
 <div class ="container" > 
     <h2>Веденея, уровень 1</h2>
-<div class="row">
-<div class="six columns">
-<h3>Здоровье: <span id="hp_value">27</span> (на старте 27), <span id="hp_status">в норме</span></h3>
-</div>
-<div class="six columns">
-<button onclick="plus_hp(document.getElementById('hp_value'))">+</button>
-<button onclick="minus_hp(document.getElementById('hp_value'))">-</button>
-</div>
-</div>
-<div class="row">
-<div class="six columns">
-<h3>Иммунитет: <span id="im_value">12</span> (на старте 12), <span id="im_status">здоров</span></h3>
-</div>
-<div class="six columns">
-<button onclick="plus_im(document.getElementById('im_value'))">+</button>
-<button onclick="minus_im(document.getElementById('im_value'))">-</button>
-</div>
-</div>
-<div class="row">
-<div class="six columns">
-<h3>Страх: <span id="fr_value">3</span> (на старте 3), <span id="fr_status">в норме</span></h3>
-</div>
-<div class="six columns">
-<button onclick="plus_fr(document.getElementById('fr_value'))">+</button>
-<button onclick="minus_fr(document.getElementById('fr_value'))">-</button>
-</div>
-</div>
-<h3><a href="helper.jpg" target="_blank">Памятка игрока</a></h3>
+   <div class="row">
+       <div class="six columns">
+           <h3>Здоровье: <span id="hp_value">27</span> (на старте 27), <span id="hp_status">в норме</span></h3>
+       </div>
+       <div class="six columns">
+           <button onclick="plus_hp(document.getElementById('hp_value'))">+</button>
+           <button onclick="minus_hp(document.getElementById('hp_value'))">-</button>
+       </div>
+   </div>
+   <div class="row">
+       <div class="six columns">
+           <h3>Иммунитет: <span id="im_value">12</span> (на старте 12), <span id="im_status">здоров</span></h3>
+       </div>
+       <div class="six columns">
+           <button onclick="plus_im(document.getElementById('im_value'))">+</button>
+           <button onclick="minus_im(document.getElementById('im_value'))">-</button>
+       </div>
+   </div>
+   <div class="row">
+       <div class="six columns">
+           <h3>Страх: <span id="fr_value">3</span> (на старте 3), <span id="fr_status">в норме</span></h3>
+       </div>
+       <div class="six columns">
+           <button onclick="plus_fr(document.getElementById('fr_value'))">+</button>
+           <button onclick="minus_fr(document.getElementById('fr_value'))">-</button>
+       </div>
+   </div>
+   <h3><a href="helper.jpg" target="_blank">Памятка игрока</a></h3>
 </div>
     <div class="container">
-<hr>       <div class="row">
+       <div class="row">
+           <div class="twelve columns">
+               <textarea name="notes" style="width: 100%; "cols="40" rows="5" placeholder="Заметки по ходу сессии"></textarea>
+           </div>
+       </div>
+    </div>
+    <div class="container">
+       <hr>
+       <div class="row">
            <div class="four columns">
               <h3>Сила: 1</h3>
            </div>
@@ -85,7 +92,8 @@
               <p>Стойкость: 1</p>
            </div>
        </div>
-<hr>       <div class="row">
+       <hr>
+       <div class="row">
            <div class="four columns">
               <h3>Интеллект: 3 (+1 к броскам)</h3>
            </div>
@@ -129,7 +137,8 @@
               <p>Внимательность: 3 (+1 к броскам)</p>
            </div>
        </div>
-<hr>       <div class="row">
+       <hr>
+       <div class="row">
            <div class="four columns">
               <h3>Воля: 3 (+1 к броскам)</h3>
            </div>
@@ -174,7 +183,8 @@
            </div>
        </div>
        <hr>
-<div class="row">           <div class="four columns">
+<div class="row">
+           <div class="four columns">
               <p><b>Дитя леса</b>: -1 сложности ко всем броскам в лесах</p>
               <p><b>Знаток трав</b>: -2 к сложности бросков, связанных с изучением или использованием таежных трав</p>
            </div>
@@ -185,7 +195,8 @@
            <h3>Вспомогательные средства</h3>
            <p class="eq">веревка</p>
            <p class="eq">маленький нож</p>
-          </div>           <div class="four columns">
+          </div>
+           <div class="four columns">
            <h3>Защита</h3>
            <p class="eq">куртка +2</p>
            <p class="eq">перчатки для сбора трав</p>
@@ -194,9 +205,11 @@
            <p class="eq">бинты (4)</p>
            <p class="eq">обеззараживающая настойка (2)</p>
            <p class="eq">настойка от простуды (2)</p>
-          </div></div>       <hr>
+          </div></div>
+       <hr>
            <h3>Собственность</h3>
-             <div class="row">           <div class="three columns">
+             <div class="row">
+           <div class="three columns">
               <p> <!--class="eq"-->лента для рогатки (2)</p>
           </div>
            <div class="three columns">
@@ -209,7 +222,8 @@
               <p> <!--class="eq"-->нити с правой руки (4)</p>
           </div>
              </div>
-             <div class="row">           <div class="three columns">
+             <div class="row">
+           <div class="three columns">
               <p> <!--class="eq"-->нити с левой руки (3)</p>
           </div>
            <div class="three columns">
@@ -329,7 +343,7 @@ check_hp_status(parseInt(element.innerHTML));}
 function minus_hp(element)
 {
 if (parseInt(element.innerHTML) > 0) {minus(element);
- check_hp_status(parseInt(element.innerHTML));}
+check_hp_status(parseInt(element.innerHTML));}
 }
 function plus_im(element)
 {
@@ -339,7 +353,7 @@ check_im_status(parseInt(element.innerHTML));}
 function minus_im(element)
 {
 if (parseInt(element.innerHTML) > 0) {minus(element);
- check_im_status(parseInt(element.innerHTML));}
+check_im_status(parseInt(element.innerHTML));}
 }
 function plus_fr(element)
 {
@@ -349,7 +363,7 @@ check_fr_status(parseInt(element.innerHTML));}
 function minus_fr(element)
 {
 if (parseInt(element.innerHTML) > 0) {minus(element);
- check_fr_status(parseInt(element.innerHTML));}
+check_fr_status(parseInt(element.innerHTML));}
 }
 function check_im_status(im)
 {
@@ -379,5 +393,7 @@ else if (hp >= 3) { hp_text = 'в критическом состоянии, -6 
 else if (hp > 0) { hp_text = 'при смерти, -6 ко всем броскам';}
 else {hp_text = 'мертв'}document.getElementById('hp_status').innerHTML = hp_text;
 }
-window.onbeforeunload = function() { return "";}</script></body>
+window.onbeforeunload = function() { return "";}
+</script>
+</body>
 </html>
