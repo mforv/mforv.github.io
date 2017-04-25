@@ -1,43 +1,32 @@
-/*@import url('https://fonts.googleapis.com/css?family=EB+Garamond');*/
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body { font-family: 'Roboto', sans-serif; color: #111; margin-top: 0px; padding-right: 0px; margin-left: 0px; margin-right: 0px;}
-header { min-height: 300px; }
-h1 { /*background-color: #FFF;*/font-family: 'Roboto', sans-serif; font-size: 60px; margin-top: 20px; margin-bottom: 20px;  text-align: center; color: #FFF/*#C62E3E*/; padding-top: 40px; padding-bottom: 40px; }
-h2 { text-align: center; font-family: 'Roboto', sans-serif; font-size: 60px; margin-top: 20px; margin-bottom: 150px;  color: #FFF; padding-top: 0;}
-h3 { text-align: center; font-family: 'Roboto', sans-serif; font-size: 42px; margin-top: 20px; margin-bottom: 20px;  color: #FFF; padding-top: 0 }
-h4 { text-align: center; font-family: 'Roboto', sans-serif; font-size: 42px; margin-top: 20px; margin-bottom: 20px;  color: #111; padding-top: 0 }
-p  { font-family: 'Roboto', sans-serif; font-size: 22px; /*line-height: 1.1em;*/ text-align: justify; /*margin-top: 0.5em; margin-bottom: 1.0em;*/}
+
+h1 { font-family: 'Roboto', sans-serif; font-size: 60px; text-align: center; color: #FFF; padding-top: 10px;}
+h2 { text-align: center; font-family: 'Roboto', sans-serif; font-size: 60px; margin-top: 20px; margin-bottom: 150px;  color: #FFF;}
+h3 { text-align: center; font-family: 'Roboto', sans-serif; font-size: 42px; margin-top: 20px; margin-bottom: 20px;  color: #FFF;}
+h4 { text-align: center; font-family: 'Roboto', sans-serif; font-size: 42px; margin-top: 20px; margin-bottom: 20px;  color: #111;}
+
+p  { font-family: 'Roboto', sans-serif; font-size: 22px; text-align: justify; /*margin-top: 0.5em; margin-bottom: 1.0em;*/}
 p.lead  { color: #111; font-size: 30px; line-height: 1.1em; text-align: center; margin-top: 0; margin-bottom: 1.0em;}
+
 hr { margin-top: 5px; margin-bottom: 5px;}
 
 /*Элементы информации об экзаменах и минимальных баллах*/
-p.score { text-align: center; font-family: 'Roboto Bold', sans-serif; color: #FFF; font-size: 50px; /*border: 5px solid;*/margin: 0px; padding: 0px;}
+p.score { text-align: center; font-family: 'Roboto Bold', sans-serif; color: #FFF; font-size: 50px; margin: 0px; padding: 0px;}
 p.exam {text-align: center; font-family: 'Roboto Bold', sans-serif; color: #FFF; font-size: 32px; margin: 0px; padding: 0px;}
 p.min { text-align: center; font-family: 'Roboto', sans-serif; color: #FFF; font-size: 30px; margin-top: -25px;}
 
 /*Элементы информации о бюджетных местах и стоимости обучения*/
-p.number { 
-    font-size: 60px;
-    text-align: center; 
-    /*display: table-cell;
-    border: 5px solid #111;
-    /*width: 2.5em;
-    height: 2.5em;
-    line-height: 2.5em;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    text-align: center;
-    vertical-align: center;*/
-    }
-p.pass { color: #111/*#C62E3E;*/ }
+p.number { font-size: 60px; text-align: center;}
 p.caption {text-align: center; font-size: 42; font-family: 'Roboto', sans-serif;  margin-top: -25px;}
 
 /*Стили формы обратной связи*/
 form { text-align: center;}
-input {width: 300px;}
+/*input {width: 300px;}*/
 button { background-color:  #C62E3E; color: #FFF; font-size: 22px;}
 button:hover {background-color: #FFF; color: #C62E3E;}
+button:active { color: #FFF;}
 
 a:link, a:visited  {	color: #C62E3E; text-decoration: none;}
 a:hover { text-decoration: underline; }
@@ -45,18 +34,40 @@ a:hover { text-decoration: underline; }
 .zero { background: url("../img/0.jpg") no-repeat; }
 .one { background: url("../img/1.jpg") no-repeat; }
 .two { background: url("../img/2.jpg") no-repeat; }
-.capt { background: #C62E3E; }
+.capt { background: #C62E3E;}
+.darker {background: rgba(0,0,0, 0.5);}
 
+
+
+
+.top { color: #C62E3E; margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px;}
+.arrow { 
+    min-height: 20vh;
+    text-align: center;
+    background: url("../img/arrow.svg") center top no-repeat;
+    background-size: 20%; 
+    color: rgb(198, 46, 62); 
+    }
+
+.topband { background-size: cover; min-height: 70vh; }
 .band {
     /*background: #FFF/*#42588a*/ /*url("../img/back.jpg") no-repeat;*/
     background-size: cover;
     min-height: 200px;
 }
 
-/*@media only screen and (max-width: 768px)
+@media only screen and (max-width: 768px)
 {
-    .band { background: #FFF#42588a url("../img/willows_back.jpg") no-repeat; }
-}*/
+    h1 {font-size: 200%; padding-top: 10px;}
+    h2 {font-size: 200%;}
+    h3 {font-size: 200%;}
+    h4 {font-size: 180%;}
+    p.score {font-size: 300%;}
+    p.exam {font-size: 200%;}
+    p.min {font-size: 180%;}
+    p.number {font-size: 300%;}
+    p.caption {font-size: 150%;}
+}
 
 .main {
     background: #FFF no-repeat;
