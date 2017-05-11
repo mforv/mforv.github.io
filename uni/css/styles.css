@@ -9,6 +9,7 @@ h4 { text-align: center; font-family: 'Roboto', sans-serif; font-size: 42px; mar
 
 p  { font-family: 'Roboto', sans-serif; font-size: 22px; text-align: justify; /*margin-top: 0.5em; margin-bottom: 1.0em;*/}
 p.lead  { color: #111; font-size: 30px; line-height: 1.1em; text-align: center; margin-top: 0; margin-bottom: 1.0em;}
+p.footer  { color: #111; font-size: 20px; line-height: 1em; text-align: center; margin-top: 0; margin-bottom: 0.5em;}
 
 hr { margin-top: 5px; margin-bottom: 5px;}
 
@@ -21,14 +22,7 @@ p.min { text-align: center; font-family: 'Roboto', sans-serif; color: #FFF; font
 p.number { font-size: 60px; text-align: center;}
 p.caption {text-align: center; font-size: 42; font-family: 'Roboto', sans-serif;  margin-top: -25px;}
 
-/*Стили формы обратной связи*/
-form { text-align: center;}
-/*input {width: 300px;}*/
-button { background-color:  #C62E3E; color: #FFF; font-size: 22px;}
-button:hover {background-color: #FFF; color: #C62E3E;}
-button:active { color: #FFF;}
-
-a:link, a:visited  {	color: #C62E3E; text-decoration: none;}
+a:link, a:visited  { color: #C62E3E; text-decoration: none;}
 a:hover { text-decoration: underline; }
 
 .zero { background: url("../img/0.jpg") no-repeat; }
@@ -37,17 +31,8 @@ a:hover { text-decoration: underline; }
 .capt { background: #C62E3E;}
 .darker {background: rgba(0,0,0, 0.5);}
 
-
-
-
-.top { color: #C62E3E; margin-top: 0px; margin-bottom: 0px; padding-bottom: 0px;}
-.arrow { 
-    min-height: 20vh;
-    text-align: center;
-    background: url("../img/arrow.svg") center top no-repeat;
-    background-size: 20%; 
-    color: rgb(198, 46, 62); 
-    }
+.top { color: #C62E3E; margin-top: 0px; margin-bottom: 40px; padding-bottom: 0px;}
+.arrow { min-height: 20vh; text-align: center; }
 
 .topband { background-size: cover; min-height: 70vh; }
 .band {
