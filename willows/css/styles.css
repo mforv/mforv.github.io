@@ -27,7 +27,7 @@ a:hover { text-decoration: underline; }
 
 .donate_form {display: block;}
 .donate_button {display: none;}
-@media only screen and (max-width: 400px)
+@media only screen and (max-width: 450px)
 {
     .donate_form {display: none;}
     .donate_button {display: block;}
