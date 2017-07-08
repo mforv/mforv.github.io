@@ -42,5 +42,5 @@ a:hover { text-decoration: underline; }
     min-height: 100vh;
     background-attachment: fixed;
     background-size: cover;
-    overflow-y: fixed;
+    overflow-y: hidden;
 }
