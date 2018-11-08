@@ -16,23 +16,36 @@ a:link, a:visited  {	color: #003897; }
 a:hover { text-decoration: none; }
 
 /*Parallax tricks*/
-header { height: 55vh; }
+header { height: 50vh; }
 
 .band {
+    background-image: url("../img/lp_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #90a2ba;
+}
+
+/* .band {
     background-image: url("../img/lp_logo.png"), url("../img/lp_bg.jpg");
     background-repeat: no-repeat, no-repeat;
     background-position: center center, left top;
     background-color: #90a2ba;
-}
+} */
 
 @media only screen and (max-width: 1024px)
 {
 
-    .band { 
+    /* .band { 
         background-image: url("../img/lp_logo.png"), url("../img/lp_bg.jpg");
         background-repeat: no-repeat, no-repeat;
         background-position: center center, -150px top;
         background-size: 45% auto, auto;
+    } */
+    .band { 
+        background-image: url("../img/lp_bg.jpg");
+        background-repeat: no-repeat;
+        background-position: -150px top;
+        background-size: auto;
     }
 }
 
@@ -41,11 +54,17 @@ header { height: 55vh; }
 
     header { height: 35vh; }
 
-    .band { 
+    /* .band { 
         background-image: url("../img/lp_logo.png"), url("../img/lp_bg.jpg");
         background-repeat: no-repeat, no-repeat;
         background-position: center 5em, -200px -100px;
         background-size: 300px auto, auto;
+    } */
+    .band { 
+        background-image: url("../img/lp_bg.jpg");
+        background-repeat: no-repeat;
+        background-position: -200px -100px;
+        background-size: auto;
     }
 }
 
