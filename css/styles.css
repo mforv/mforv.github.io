@@ -41,12 +41,6 @@ header { height: 50vh; }
         background-position: center center, -150px top;
         background-size: 45% auto, auto;
     } */
-    .band { 
-        background-image: url("../img/lp_bg.jpg");
-        background-repeat: no-repeat;
-        background-position: -150px top;
-        background-size: auto;
-    }
 }
 
 @media only screen and (max-width: 768px)
@@ -63,7 +57,7 @@ header { height: 50vh; }
     .band { 
         background-image: url("../img/lp_bg.jpg");
         background-repeat: no-repeat;
-        background-position: -200px -100px;
+        background-position: center -100px;
         background-size: auto;
     }
 }
