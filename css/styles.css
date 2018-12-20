@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500');
 
-body { font-family: 'Roboto Light', sans-serif; color: #111; margin-top: -30px; padding-right: 0px; margin-left: 0px; margin-right: 0px; }
+body { font-family: 'Roboto', sans-serif; font-weight: 300; color: #111; margin-top: -30px; padding-right: 0px; margin-left: 0px; margin-right: 0px; }
 
 h1 { text-align: center; padding-top: 100px; padding-bottom: 70px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;}
-h2 { font-family: 'Roboto', sans-serif; margin-top: 0; margin-bottom: 15px; font-size: 26px; font-weight: 400; color: #003897; padding-top: 0 }
-h3 { font-family: 'Roboto', sans-serif; margin-top: 0; margin-bottom: 15px; font-size: 20px; font-weight: 400; color: #003897; padding-top: 0 }
-h4 { font-family: 'Roboto Light', sans-serif; margin-top: 0; margin-bottom: 2px; font-size: 18px; font-weight: bold; color: #003897; padding-top: 0 }
-p  { font-size: 18px; line-height: 1.75em; margin-top: 0 }
+h2 { margin-top: 0; margin-bottom: 15px; font-size: 26px; font-weight: 400; color: #003897; padding-top: 0 }
+h3 { margin-top: 0; margin-bottom: 15px; font-size: 20px; font-weight: 400; color: #003897; padding-top: 0 }
+h4 { margin-top: 0; margin-bottom: 2px; font-size: 18px; font-weight: bold; color: #003897; padding-top: 0 }
+p  { font-size: 18px; line-height: 1.5em; margin-top: 0 }
 p.links  { font-size: 26px; line-height: 1em; margin-top: 0; margin-bottom: 15px; text-align: center;}
+b, strong { font-weight: 500 !important;}
 span { border-bottom: 1px dashed grey; padding-bottom: 0.8px; cursor: help; }
 li  { font-size: 18px; line-height: 1.4em; margin-top: 0}
 hr { margin-top: 30px; margin-bottom: 30px; }
@@ -15,7 +16,6 @@ hr { margin-top: 30px; margin-bottom: 30px; }
 a:link, a:visited  {	color: #003897; }
 a:hover { text-decoration: none; }
 
-/*Parallax tricks*/
 header { height: 50vh; }
 
 .band {
@@ -25,35 +25,11 @@ header { height: 50vh; }
     background-color: #90a2ba;
 }
 
-/* .band {
-    background-image: url("../img/lp_logo.png"), url("../img/lp_bg.jpg");
-    background-repeat: no-repeat, no-repeat;
-    background-position: center center, left top;
-    background-color: #90a2ba;
-} */
-
-@media only screen and (max-width: 1024px)
-{
-
-    /* .band { 
-        background-image: url("../img/lp_logo.png"), url("../img/lp_bg.jpg");
-        background-repeat: no-repeat, no-repeat;
-        background-position: center center, -150px top;
-        background-size: 45% auto, auto;
-    } */
-}
-
 @media only screen and (max-width: 768px)
 {
 
     header { height: 35vh; }
 
-    /* .band { 
-        background-image: url("../img/lp_logo.png"), url("../img/lp_bg.jpg");
-        background-repeat: no-repeat, no-repeat;
-        background-position: center 5em, -200px -100px;
-        background-size: 300px auto, auto;
-    } */
     .band { 
         background-image: url("../img/lp_bg.jpg");
         background-repeat: no-repeat;
@@ -66,12 +42,3 @@ header { height: 50vh; }
 
 .upper-block { margin-top: 0; padding-top: 30px; background-color: #FFF; }
 .bottom-block {margin-bottom: 0; padding-bottom: 30px; background-color: #FFF; }
-
-/* .parallax {
-    position: relative;
-    width: 100%;
-    background-attachment: fixed;
-    background-size: cover;
-} */
-
-
