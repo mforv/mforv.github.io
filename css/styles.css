@@ -1,44 +1,119 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500');
 
-body { font-family: 'Roboto', sans-serif; font-weight: 300; color: #111; margin-top: -30px; padding-right: 0px; margin-left: 0px; margin-right: 0px; }
+body { font-family: 'Roboto', sans-serif; color: #111; font-weight: 300; margin: 0; }
 
-h1 { text-align: center; padding-top: 100px; padding-bottom: 70px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px;}
-h2 { margin-top: 0; margin-bottom: 15px; font-size: 26px; font-weight: 400; color: #003897; padding-top: 0 }
-h3 { margin-top: 0; margin-bottom: 15px; font-size: 20px; font-weight: 400; color: #003897; padding-top: 0 }
-h4 { margin-top: 0; margin-bottom: 2px; font-size: 18px; font-weight: bold; color: #003897; padding-top: 0 }
-p  { font-size: 18px; line-height: 1.5em; margin-top: 0 }
-p.links  { font-size: 26px; line-height: 1em; margin-top: 0; margin-bottom: 15px; text-align: center;}
-b, strong { font-weight: 500 !important;}
-span { border-bottom: 1px dashed grey; padding-bottom: 0.8px; cursor: help; }
-li  { font-size: 18px; line-height: 1.4em; margin-top: 0}
-hr { margin-top: 30px; margin-bottom: 30px; }
+.container {
+    display: grid;
+    position: relative;
+    max-width: 960px;
+    margin: 0 auto;
+    font-size: 20px;
+}
 
-a:link, a:visited  {	color: #003897; }
+.links { 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.5em;
+    margin: 1em 0;
+}
+
+.stuff-item {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-column-gap: 1em;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.stuff-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.stuff-title {
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-bottom: 0.25em;
+}
+
+h2 {
+    color: #003897;
+    font-weight: 500;
+    font-size: 1.75em;
+    margin: 0.5em 0 0.25em 0;
+}
+
+h3 {
+    color: #003897;
+    font-weight: 500;
+    font-size: 1.25em;
+    margin: 0.25em 0;
+}
+
+p {
+    margin: 0.5em 0;
+}
+p:last-child {
+    margin-bottom: 2em;
+}
+
+.note { 
+    border-bottom: 1px dashed grey; 
+    cursor: help; 
+}
+
+.link {
+    margin: 0 0.1em;
+}
+
+ul {
+    list-style-type: circle;
+    margin: 0;
+    padding-left: 1.5em;
+}
+
+li {
+    margin: 1em 0;
+}
+
+b, strong {
+    font-weight: 500;
+}
+
+a:link, a:visited  { color: #003897; }
 a:hover { text-decoration: none; }
 
-header { height: 50vh; }
-
-.band {
+.photo {
     background-image: url("../img/lp_bg.jpg");
     background-repeat: no-repeat;
     background-position: center top;
     background-color: #90a2ba;
+    height: 50vh;
 }
 
-@media only screen and (max-width: 768px)
-{
-
-    header { height: 35vh; }
-
-    .band { 
-        background-image: url("../img/lp_bg.jpg");
-        background-repeat: no-repeat;
-        background-position: center -100px;
-        background-size: auto;
+@media (min-width: 550px) {
+    .container {
+        width: 80%;
     }
 }
 
-.main { background: #FFF no-repeat; }
+@media only screen and (max-width: 550px)
+{
+    .photo { 
+        background-position: center -100px;
+    }
+    
+    .container {
+        padding: 0 1em;
+    }
 
-.upper-block { margin-top: 0; padding-top: 30px; background-color: #FFF; }
-.bottom-block {margin-bottom: 0; padding-bottom: 30px; background-color: #FFF; }
+    .link {
+        margin: 0 0.05em;
+    }
+
+    .stuff-item {
+        grid-template-columns: auto;
+    }
+}
+
