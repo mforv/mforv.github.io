@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:og="http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Tweetscape</title>
+    <meta name="description" content="Cyberspace we deserve"/>
+
+    <meta name="theme-color" content="#000011"/>
+    <link rel="icon" type="image/png" href="./favicon.png"/>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tweetscape" />
+    <meta property="og:url" content="https://mforv.github.io/tweetscape" />
+    <meta property="og:description" content="Cyberspace we deserve" />
+    <meta property="og:site_name" content="mforv"/>
+    <meta property="og:image" content="https://mforv.github.io/img/tweetscape.jpg" />
+    <meta property="vk:image" content="https://mforv.github.io/img/tweetscape-vk.jpg"/>
+    <meta property="og:image:width" content="600"/>
+    <meta property="og:image:height" content="300"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mforv">
+    <meta name="twitter:title" content="Tweetscape">
+    <meta name="twitter:description" content="Cyberspace we deserve">
+    <meta name="twitter:image" content="https://mforv.github.io/img/tweetscape.jpg" />
+    <meta name="twitter:creator" content="@mforv">
+    
+    <style> body { margin: 0; overflow: hidden; }</style>
+
+    <script src="https://unpkg.com/3d-force-graph"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38992446-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-38992446-2');
+    </script>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        const elem = document.getElementById('container')
+
+        const Graph = ForceGraph3D()(elem)
+            .jsonUrl('./tweetscape.json')
+            .nodeRelSize(4)
+            .nodeColor(node => '#ccffff')
+            .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
+            .nodeLabel(node => `<span style="font-size: 18px; padding: 5px; background-color: #000030; 
+                color: #ff0055; border: 1px solid #cff; border-radius: 5px;">${node.username}</span>`)
+            .linkDirectionalArrowLength(3.5)
+            .linkDirectionalArrowRelPos(1)
+            .enableNodeDrag(false)
+            .onNodeClick(node => {
+                const distance = 40;
+                const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
+                Graph.cameraPosition({ x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, node, 3000);
+            })
+            .nodeOpacity(0.9)
+            .linkOpacity(0.5)
+            .linkWidth(0.33);
+        Graph.d3Force('charge').strength(-120);
+    </script>
+    
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter41885384 = new Ya.Metrika({
+                        id:41885384,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true,
+                        webvisor:true
+                    });
+                } catch(e) { }
+            });
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/41885384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</body>
+</html>
