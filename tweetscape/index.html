@@ -48,6 +48,8 @@
             background-color: #000020; cursor: pointer;
         }
         button:hover { border-color: #f05; }
+        .label {font-size: 18px; padding: 5px; background-color: #000030; 
+                color: #ff0055; border: 1px solid #cff; border-radius: 5px;}
 
         @media screen and (min-width: 550px){
             .info { max-width: 25%;}
@@ -102,9 +104,9 @@
 
         function focusOnUser(user)
         {
-            
+            user = user.replace('@', '').toLowerCase();
             let {nodes, links} = Graph.graphData();
-            let node = nodes.find(x => x.username == user);
+            let node = nodes.find(x => x.username.toLowerCase() == user);
             if (node != null)
             { 
                 Graph.graphData().nodes.indexOf(node).color = '#ff00ff';
@@ -122,11 +124,11 @@
 
         const Graph = ForceGraph3D()(elem)
             .jsonUrl('./tweetscape.json')
-            .nodeRelSize(4)
             .nodeColor(node => '#ccffff')
+            .linkColor(link => '#00ffff')
+            .nodeVal(5)
             .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
-            .nodeLabel(node => `<span style="font-size: 18px; padding: 5px; background-color: #000030; 
-                color: #ff0055; border: 1px solid #cff; border-radius: 5px;">${node.username}</span>`)
+            .nodeLabel(node => `<span class="label">${node.username}</span>`)
             .linkDirectionalArrowLength(3.5)
             .linkDirectionalArrowRelPos(1)
             .enableNodeDrag(false)
@@ -138,7 +140,8 @@
             .nodeOpacity(0.9)
             .linkOpacity(0.5)
             .linkWidth(0.33);
-        Graph.d3Force('charge').strength(-175);
+        Graph.d3Force('center');
+        Graph.d3Force('charge').strength(-1000);
     </script>
     
     <!-- Yandex.Metrika counter -->
