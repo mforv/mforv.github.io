@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Tweetscape</title>
+    <title>Tweetscape 2D</title>
     <meta name="description" content="Cyberspace we deserve"/>
 
     <meta name="theme-color" content="#000011"/>
     <link rel="icon" type="image/png" href="./favicon.png"/>
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Tweetscape" />
-    <meta property="og:url" content="https://mforv.github.io/tweetscape" />
+    <meta property="og:title" content="Tweetscape 2D" />
+    <meta property="og:url" content="https://mforv.github.io/tweetscape/2d" />
     <meta property="og:description" content="Cyberspace we deserve" />
     <meta property="og:site_name" content="mforv"/>
     <meta property="og:image" content="https://mforv.github.io/img/tweetscape.jpg" />
@@ -21,7 +21,7 @@
     <meta property="og:image:height" content="300"/>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@mforv">
-    <meta name="twitter:title" content="Tweetscape">
+    <meta name="twitter:title" content="Tweetscape 2D">
     <meta name="twitter:description" content="Cyberspace we deserve">
     <meta name="twitter:image" content="https://mforv.github.io/img/tweetscape.jpg" />
     <meta name="twitter:creator" content="@mforv">
@@ -59,7 +59,7 @@
         a:visited { color: rgb(255, 128, 170);}
     </style>
 
-    <script src="https://unpkg.com/3d-force-graph"></script>
+    <script src="https://unpkg.com/force-graph"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38992446-2"></script>
@@ -79,8 +79,8 @@
         </div>
         <span class="description-title" onclick="toggleDescription(this, 'dRus');">Скрыть описание</span>
         <div class="description" id='dRus'>
-            <p>Это Tweetscape — трехмерное представление связей между пользователями Твиттера.</p>
-            <p>У Tweetscape есть также <a href="/tweetscape/2d">двумерная версия</a> (она менее требовательна к ресурсам).</p>
+            <p>Это Tweetscape 2D — двумерное представление связей между пользователями Твиттера.</p>
+            <p><a href="/tweetscape">Оригинальная версия</a> Tweetscape трехмерна, но гораздо требовательнее к ресурсам.</p>
             <p>Оно основано на открытых данных о том, кого пользователи фолловят.</p>
             <p>Для каждого пользователя из базы берутся данные обо всех аккаунтах, которые он фолловит.</p>
             <p>База пополняется при помощи отбора по числу существующих связей: если пользователя много кто фолловит из тех, кто уже есть в базе, но при этом он сам еще не в базе, он будет включен туда при следующем обновлении. Происходит это в полуавтоматическом режиме с связи с ограничениями <a href="https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-friends-ids">Twitter API</a>.</p>
@@ -109,10 +109,9 @@
             let {nodes, links} = Graph.graphData();
             let node = nodes.find(x => x.username.toLowerCase() == user);
             if (node != null)
-            {
-                const distance = 200;
-                const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
-                Graph.cameraPosition({ x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, node, 2000)
+            { 
+                Graph.centerAt(node.x, node.y, 1000);
+                Graph.zoom(0.85, 2000);
             }
             else
             {
@@ -121,37 +120,64 @@
         }
 
         const elem = document.getElementById('container');
+        let Graph = ForceGraph()(elem);
+        let selectedNode = null;
+        let highlightNodesRed = [];
+        let highlightNodesBlue = [];
+        let highlightLinks = [];
 
-        const Graph = ForceGraph3D()(elem)
-            .jsonUrl('/tweetscape.json')
-            .nodeColor(node => '#ccffff')
-            .linkColor(link => '#00ffff')
-            .nodeVal(5)
-            .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
+        fetch('/tweetscape.json').then(res => res.json()).then(data => {
+            Graph = ForceGraph()(elem)
+            .graphData(data)
+            .backgroundColor('#000011')
+            .nodeVal(20)
+            .zoom(0.27)
             .nodeLabel(node => `<span class="label">${node.username}</span>`)
+            .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
+            .onNodeHover(node => {
+                if (node)
+                {
+                    selectedNode = node;
+                    highlightNodesRed = [];
+                    highlightNodesBlue = [];
+                    highlightLinks = [];
+                    let {nodes, links} = Graph.graphData();
+                    let followingLinks = links.filter(function(link) { return link.source.id == node.id })
+                    let followersLinks = links.filter(function(link) { return link.target.id == node.id })
+                    followingLinks.forEach(function(link) { highlightNodesRed.push(link.target)})
+                    followersLinks.forEach(function(link) { highlightNodesBlue.push(link.source)})
+                    highlightLinks = followingLinks.concat(followersLinks);
+                }
+                else
+                { 
+                    highlightNodesRed = []; 
+                    highlightNodesBlue = [];
+                    highlightLinks = [];
+                    selectedNode = null;
+                }
+            })
+            .nodeColor(node => '#cff')
+            .linkColor(link => '#00dddd')
             .linkDirectionalArrowLength(3.5)
             .linkDirectionalArrowRelPos(1)
-            // .linkCurvature(0.25)
             .enableNodeDrag(false)
-            // .onNodeClick(node => {
-            //     // Aim at node from outside it
-            //     const distance = 60;
-            //     const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
-            //     Graph.cameraPosition(
-            //         { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
-            //         node, // lookAt ({ x, y, z })
-            //         2000  // ms transition duration
-            //     );
-            // })
-            .nodeOpacity(0.9)
-            .linkOpacity(0.5)
-            .linkWidth(0.33);
-            // .nodeAutoColorBy('username')
-            // .linkAutoColorBy('type')
+            .linkWidth(link => highlightLinks.indexOf(link) !== -1  ? 1 : 0.33)
+            .linkDirectionalParticles(2)
+            .linkDirectionalParticleSpeed(0.075)
+            .linkDirectionalParticleWidth(link => highlightLinks.indexOf(link) !== -1 ? 4 : 0)
+            .nodeCanvasObjectMode(node => (selectedNode === node ||highlightNodesRed.indexOf(node) !== -1 
+                                    || highlightNodesBlue.indexOf(node) !== -1 ) ? 'after' : undefined)
+            .nodeCanvasObject((node, ctx) => {
+                ctx.beginPath();
+                ctx.arc(node.x, node.y, 18, 0, 2 * Math.PI, false);
+                if (highlightNodesRed.indexOf(node) !== -1) { ctx.fillStyle = '#f05'; }
+                else if (highlightNodesBlue.indexOf(node) !== -1)  { ctx.fillStyle = '#50f'; }
+                else { ctx.fillStyle = '#000050'; }
+                ctx.fill();
+            });
+            Graph.d3Force('charge').strength(-5000);
+        });
 
-        Graph.d3Force('center');
-        // Spread nodes a little wider
-        Graph.d3Force('charge').strength(-1000);
     </script>
 
     <!-- Yandex.Metrika counter -->
