@@ -126,7 +126,7 @@
         let highlightNodesBlue = [];
         let highlightLinks = [];
 
-        fetch('/tweetscape.json').then(res => res.json()).then(data => {
+        fetch('./tweetscape.json').then(res => res.json()).then(data => {
             Graph = ForceGraph()(elem)
             .graphData(data)
             .backgroundColor('#000011')

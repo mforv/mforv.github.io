@@ -73,22 +73,22 @@
 </head>
 <body>
     <div class="info">
-        <div style="margin: 5px 0;">
-            <input type="text" id="userQuery" placeholder="username">
-            <button onclick="focusOnUser(document.getElementById('userQuery').value)">Найти пользователя</button>
+            <div style="margin: 5px 0;">
+                <input type="text" id="userQuery" placeholder="username">
+                <button onclick="focusOnUser(document.getElementById('userQuery').value)">Найти пользователя</button>
+            </div>
+            <span class="description-title" onclick="toggleDescription(this, 'dRus');">Скрыть описание</span>
+            <div class="description" id='dRus'>
+                <p>Это Tweetscape — трехмерное представление связей между пользователями Твиттера.</p>
+                <p>У Tweetscape есть также <a href="/tweetscape/2d">двумерная версия</a> (она менее требовательна к ресурсам).</p>
+                <p>Оно основано на открытых данных о том, кого пользователи фолловят.</p>
+                <p>Для каждого пользователя из базы берутся данные обо всех аккаунтах, которые он фолловит.</p>
+                <p>База пополняется при помощи отбора по числу существующих связей: если пользователя много кто фолловит из тех, кто уже есть в базе, но при этом он сам еще не в базе, он будет включен туда при следующем обновлении. Происходит это в полуавтоматическом режиме с связи с ограничениями <a href="https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-friends-ids">Twitter API</a>.</p>
+                <p>При каждом обновлении граф связей рассчитывается заново. Минимальное число связей для того, чтобы пользователь был включен в отображение, — 2. Это сделано для уменьшения размерности графа в целях оптимизации.</p>
+                <p>Не стоит расстраиваться, если вы вдруг себя не нашли: вероятно, в базу просто еще не попали данные о вашем аккаунте.</p>
+                <p>Обратная связь: <a href="https://twitter.com/mforv">@mforv</a> (<a href="https://mforv.github.io">сайт</a>)</p>
+            </div>
         </div>
-        <span class="description-title" onclick="toggleDescription(this, 'dRus');">Скрыть описание</span>
-        <div class="description" id='dRus'>
-            <p>Это Tweetscape — трехмерное представление связей между пользователями Твиттера.</p>
-            <p>У Tweetscape есть также <a href="/tweetscape/2d">двумерная версия</a> (она менее требовательна к ресурсам).</p>
-            <p>Оно основано на открытых данных о том, кого пользователи фолловят.</p>
-            <p>Для каждого пользователя из базы берутся данные обо всех аккаунтах, которые он фолловит.</p>
-            <p>База пополняется при помощи отбора по числу существующих связей: если пользователя много кто фолловит из тех, кто уже есть в базе, но при этом он сам еще не в базе, он будет включен туда при следующем обновлении. Происходит это в полуавтоматическом режиме с связи с ограничениями <a href="https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-friends-ids">Twitter API</a>.</p>
-            <p>При каждом обновлении граф связей рассчитывается заново. Минимальное число связей для того, чтобы пользователь был включен в отображение, — 2. Это сделано для уменьшения размерности графа в целях оптимизации.</p>
-            <p>Не стоит расстраиваться, если вы вдруг себя не нашли: вероятно, в базу просто еще не попали данные о вашем аккаунте.</p>
-            <p>Обратная связь: <a href="https://twitter.com/mforv">@mforv</a> (<a href="https://mforv.github.io">сайт</a>)</p>
-        </div>
-    </div>
 
     <div id="container"></div>
 
@@ -123,7 +123,7 @@
         const elem = document.getElementById('container');
 
         const Graph = ForceGraph3D()(elem)
-            .jsonUrl('/tweetscape.json')
+            .jsonUrl('./tweetscape.json')
             .nodeColor(node => '#ccffff')
             .linkColor(link => '#00ffff')
             .nodeVal(5)
@@ -131,29 +131,14 @@
             .nodeLabel(node => `<span class="label">${node.username}</span>`)
             .linkDirectionalArrowLength(3.5)
             .linkDirectionalArrowRelPos(1)
-            // .linkCurvature(0.25)
             .enableNodeDrag(false)
-            // .onNodeClick(node => {
-            //     // Aim at node from outside it
-            //     const distance = 60;
-            //     const distRatio = 1 + distance/Math.hypot(node.x, node.y, node.z);
-            //     Graph.cameraPosition(
-            //         { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
-            //         node, // lookAt ({ x, y, z })
-            //         2000  // ms transition duration
-            //     );
-            // })
             .nodeOpacity(0.9)
             .linkOpacity(0.5)
             .linkWidth(0.33);
-            // .nodeAutoColorBy('username')
-            // .linkAutoColorBy('type')
-
         Graph.d3Force('center');
-        // Spread nodes a little wider
         Graph.d3Force('charge').strength(-1000);
     </script>
-
+    
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (d, w, c) {
