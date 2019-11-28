@@ -124,9 +124,9 @@
 
         const Graph = ForceGraph3D()(elem)
             .jsonUrl('./tweetscape.json')
-            .nodeColor(node => '#ccffff')
-            .linkColor(link => '#00ffff')
-            .nodeVal(5)
+            .nodeColor(() => '#ccffff')
+            .linkColor(() => '#00ffff')
+            .nodeRelSize(5)
             .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
             .nodeLabel(node => `<span class="label">${node.username}</span>`)
             .linkDirectionalArrowLength(3.5)
@@ -134,7 +134,10 @@
             .enableNodeDrag(false)
             .nodeOpacity(0.9)
             .linkOpacity(0.5)
-            .linkWidth(0.33);
+            .linkWidth(0.33)
+            .d3AlphaDecay(0.01)
+            .d3VelocityDecay(0.1)
+            .cooldownTime(30000);
         Graph.d3Force('center');
         Graph.d3Force('charge').strength(-1000);
     </script>

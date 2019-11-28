@@ -130,11 +130,11 @@
             Graph = ForceGraph()(elem)
             .graphData(data)
             .backgroundColor('#000011')
-            .nodeVal(20)
+            .nodeRelSize(20)
             .zoom(0.27)
             .nodeLabel(node => `<span class="label">${node.username}</span>`)
-            .onNodeHover(node => elem.style.cursor = node ? 'pointer' : null)
             .onNodeHover(node => {
+                elem.style.cursor = node ? 'pointer' : null
                 if (node)
                 {
                     selectedNode = node;
@@ -156,8 +156,8 @@
                     selectedNode = null;
                 }
             })
-            .nodeColor(node => '#cff')
-            .linkColor(link => '#00dddd')
+            .nodeColor(() => '#cff')
+            .linkColor(() => '#00cccc')
             .linkDirectionalArrowLength(3.5)
             .linkDirectionalArrowRelPos(1)
             .enableNodeDrag(false)
@@ -165,6 +165,7 @@
             .linkDirectionalParticles(2)
             .linkDirectionalParticleSpeed(0.075)
             .linkDirectionalParticleWidth(link => highlightLinks.indexOf(link) !== -1 ? 4 : 0)
+            .onNodeClick(node => window.open(`https://twitter.com/${node.username}`, '_blank'))
             .nodeCanvasObjectMode(node => (selectedNode === node ||highlightNodesRed.indexOf(node) !== -1 
                                     || highlightNodesBlue.indexOf(node) !== -1 ) ? 'after' : undefined)
             .nodeCanvasObject((node, ctx) => {
@@ -174,7 +175,10 @@
                 else if (highlightNodesBlue.indexOf(node) !== -1)  { ctx.fillStyle = '#50f'; }
                 else { ctx.fillStyle = '#000050'; }
                 ctx.fill();
-            });
+            })
+            .d3AlphaDecay(0.01)
+            .d3VelocityDecay(0.1)
+            .cooldownTime(30000);
             Graph.d3Force('charge').strength(-5000);
         });
 
