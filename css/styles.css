@@ -15,7 +15,7 @@ body { font-family: 'Roboto', sans-serif; color: #111; font-weight: 300; margin:
     justify-content: center;
     flex-wrap: wrap;
     font-size: 1.5em;
-    margin: 1em 0;
+    margin: 1em 0 0.5em 0;
 }
 
 .stuff-item {
@@ -77,8 +77,23 @@ li {
     margin: 1em 0;
 }
 
+.course-li {
+    margin: 0.5em 0;
+}
+
 b, strong {
     font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}
+
+.courses-title {
+    color: #003897;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    cursor: pointer;
 }
 
 a:link, a:visited  { color: #003897; }
@@ -90,6 +105,12 @@ a:hover { text-decoration: none; }
     background-position: center top;
     background-color: #90a2ba;
     height: 50vh;
+}
+
+hr { 
+    border-width: 0;
+    border-top: 1px solid #003897; 
+    width: 100%;
 }
 
 @media (min-width: 550px) {
