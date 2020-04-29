@@ -9,4 +9,5 @@ Disallow: /img/
 Disallow: /willows/css/
 Disallow: /willows/img/
 Disallow: /anatomists/
+Disallow: /roadmap/
 Host: https://mforv.github.io/

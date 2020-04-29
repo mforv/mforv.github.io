@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:og="http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Современный преподаватель: технология успеха</title>
+    <meta name="description" content="Дорожная карта аспиранта ПНИПУ"/>
+
+    <meta name="theme-color" content="#000a12"/>
+    <link rel="icon" type="image/png" href="./favicon.png"/>
+    
+    <style> 
+        
+        body { 
+            margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 20px;
+            background-image: url('index.jpg'); 
+        }
+        #container {
+            position: relative;
+            z-index: 999;
+            display: grid;
+            padding: 1em;
+            box-sizing: border-box;
+            row-gap: 1em;
+            width: 75%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        .item {
+            display: grid;
+            border: 2px solid #000a12;
+            border-radius: 10px;
+            padding: 0.75em;
+            color: #000a12;
+            transition: all 0.5s ease-in-out;
+            grid-template-columns: 1fr auto;
+        }
+        .off {display: none;}
+        h2 {
+            margin: 0;
+            color: #000a12;
+        }
+        h3 {
+            margin: 0;
+            color: #000a12;
+        }
+        .more {
+            color: #f07;
+            cursor: pointer;
+            border: 2px solid #f07;
+            border-radius: 5px;
+            padding: 0 0.25em;
+            text-align: center;
+        }
+        .desc {
+            margin-top: 0.5em;
+        }
+        a { color: #f07;}
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38992446-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-38992446-2');
+    </script>
+</head>
+<body>
+    <div class="back"></div>
+    <div id="container">
+        <h2>Современный преподаватель: технология успеха</h2>
+        <h3>Дорожная карта</h2>
+        <div class="item">
+            1. Поставь перед собой цель <span class="more" onclick="toggleDescription(this)">+</span>
+            <div class="desc off">Поставь перед собой цель, например, «сформировать педагогическую компетентность».</div>
+        </div>
+        <div class="item">
+            2. Выяви свои сильные и слабые стороны <span class="more" onclick="toggleDescription(this)">+</span>
+            <div class="desc off">Выяви свои сильные и слабые качества как педагога, чтобы знать, на что стоит обратить внимание.</div>
+        </div>
+        <div class="item">
+            3. Разработай план действий <span class="more" onclick="toggleDescription(this)">+</span>
+            <div class="desc off">План поможет тебе организовать путь и наметить конкретные шаги по достижению твоей цели.</div>
+        </div>
+        <div class="item">
+            4. Изучи опыт ведущих педагогов <span class="more" onclick="toggleDescription(this)">+</span>
+            <div class="desc off">Тебе помогут в этом теоретические работы по педагогике, лекции, вебинары, онлайн-курсы. Например: <a href='https://1sept.ru/'>Издательский дом Первое сентября</a>, <a href='https://prosv.ru/webinars'>Вебинары группы Просвещение</a></div>
+        </div>
+        <div class="item">
+            5. Обменивайся опытом с коллегами <span class="more" onclick="toggleDescription(this)">+</span>
+            <div class="desc off">Участвуй в семинарах, открытых уроках, тренингах. Например: <a href='https://edexpert.ru/'>EdExpert</a></div>
+        </div>
+        <div class="item">
+            6. Осваивай новые технологии <span class="more" onclick="toggleDescription(this)">+</span>
+            <div class="desc off">Следи за новыми тенденциями в образовании и образовательных технологиях.</div>
+        </div>
+        <div class="item">
+            7. Найди общий язык со студентами <span class="more" onclick="toggleDescription(this)">+</span>
+            <div class="desc off">Выяви, какие интересы могут быть у студентов, постарайся найти индивидуальный подход.</div>
+        </div>
+        <div class="item">
+            8. Продолжай развиваться <span class="more" onclick="toggleDescription(this)">+</span>
+            <div class="desc off">Поддерживай связь с коллегами, продолжай совершенствоваться в своей научной области.</div>
+        </div>
+        <div class="item">
+            9. Будь современным преподавателем <span class="more" onclick="toggleDescription(this)">+</span>
+            <div class="desc off">Стань преподавателем-исследователем и веди педагогическую деятельность в высшей школе.</div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDescription(toggle)
+        {
+            const el = toggle.nextElementSibling.classList.toggle('off');
+            toggle.innerText = toggle.innerText == '+' ? '–' : '+';
+        }
+
+    </script>
+    
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter41885384 = new Ya.Metrika({
+                        id:41885384,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true,
+                        webvisor:true
+                    });
+                } catch(e) { }
+            });
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/41885384" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</body>
+</html>
