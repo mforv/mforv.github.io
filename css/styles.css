@@ -66,6 +66,9 @@ p:last-child {
 .link {
     margin: 0 0.1em;
 }
+.link a:hover {
+    color: #0033ff;
+}
 
 ul {
     list-style-type: circle;
