@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
-html { font-size: 20px;}
+html {
+    font-size: 20px;
+    --mf-accent: hsl(220, 50%, 53%);
+    --mf-highlight: hsl(220, 100%, 53%);
+}
 
 body { font-family: 'Open Sans', sans-serif; color: #111; margin: 0; }
 
@@ -39,14 +43,14 @@ body { font-family: 'Open Sans', sans-serif; color: #111; margin: 0; }
 }
 
 h2 {
-    color: #003897;
+    color: var(--mf-accent);
     font-weight: 600;
     font-size: 1.8rem;
     margin: 0.5rem 0 0.25rem 0;
 }
 
 h3 {
-    color: #003897;
+    color: var(--mf-accent);
     font-weight: 600;
     font-size: 1.3rem;
     margin: 0.25rem 0;
@@ -60,7 +64,7 @@ p:last-child {
 }
 
 .note { 
-    border-bottom: 1px dashed grey; 
+    border-bottom: 1px dashed hsl(210, 10%, 75%); 
     cursor: help; 
 }
 
@@ -68,7 +72,7 @@ p:last-child {
     margin: 0 0.1em;
 }
 .link a:hover {
-    color: #0033ff;
+    color: var(--mf-highlight);
 }
 
 ul {
@@ -90,26 +94,26 @@ li {
 }
 
 .courses-title {
-    color: #003897;
+    color: var(--mf-accent);
     text-decoration: underline;
     text-decoration-style: dashed;
     cursor: pointer;
 }
 
-a:link, a:visited  { color: #003897; }
+a:link, a:visited  { color: var(--mf-accent); }
 a:hover { text-decoration: none; }
 
 .photo {
     background-image: url("../img/lp_bg.jpg");
     background-repeat: no-repeat;
     background-position: center top;
-    background-color: #90a2ba;
+    background-color: hsl(214, 23%, 65%);
     height: 50vh;
 }
 
 hr { 
     border-width: 0;
-    border-top: 1px solid #003897; 
+    border-top: 1px solid var(--mf-accent); 
     width: 100%;
 }
 
